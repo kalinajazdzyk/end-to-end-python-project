@@ -71,7 +71,7 @@ def process_split(
 
     dataset = CIFAR10(
         root=DATA_DIR,
-        train=(split == "train"),
+        train=(split != "test"),
         download=False,
     )
 
@@ -98,7 +98,9 @@ def main() -> None:
     print(f"Loaded manifest: {len(manifest)} samples")
 
     process_split(manifest, "train")
+    process_split(manifest, "validation")
     process_split(manifest, "test")
+
 
     print("Chunk processing complete.")
 
