@@ -1,0 +1,17 @@
+project:
+  name: cv-chunk-processing
+  seed: 42
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  manifest_dir: data/manifests
+  chunk_size: 32
+
+training:
+  batch_size: 32
+  epochs: 10
+  learning_rate: 0.001
+
+model:
+  name: baseline_cnn
